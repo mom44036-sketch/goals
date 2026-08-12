@@ -462,7 +462,7 @@
   <section class="hero-section">
     <div class="hero-inner">
       <div class="hero-header">
-        <h2 class="hero-title" style="color:#0d2f56">ماذا تريد أن تحقق؟</h2>
+        <h2 class="hero-title">ماذا تريد أن تحقق؟</h2>
          <img src="linee.png" alt="" style="margin-top: 14px; max-width: 180px;">
         <p class="hero-subtitle">اختر هدفك وسنوجهك للمسار والدورة المناسبة لك بخطوة واحدة</p>
       </div>
@@ -564,21 +564,29 @@
   function svg(iconKey) {
     return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + ICONS[iconKey] + '</svg>';
   }
+
+  /* ============================================================
+     روابط الكروت: غيّر قيمة link لكل هدف باللينك بتاع الدورات المناسبة
+     ============================================================ */
   const GOALS = [
-    { title: 'أريد اجتياز STEP', desc: 'مسار مخصص + متابعة يومية', icon: 'target', bg: '#F7F3FF', border: '#E7DCFA', iconBg: '#8B5CF6', iconColor: '#FFFFFF', titleColor: '#5B21B6', rotate: '1deg' },
-    { title: 'أريد رفع درجة IELTS', desc: 'خطة احترافية + محاكاة اختبار', icon: 'award', bg: '#FFF4EC', border: '#FBDFC7', iconBg: '#FF8A3D', iconColor: '#FFFFFF', titleColor: '#B45309', rotate: '-1.2deg' },
-    { title: 'أريد اجتياز القدرات', desc: 'شرح مبسط + تدريبات ذكية', icon: 'lightbulb', bg: '#FFFBEA', border: '#FBEEB8', iconBg: '#F2C94C', iconColor: '#5A4300', titleColor: '#8A6A00', rotate: '0.8deg' },
-    { title: 'أريد الاستعداد للتحصيلي', desc: 'ملخصات مركزة + بنك أسئلة', icon: 'bookopen', bg: '#EFF7FF', border: '#D6EAFB', iconBg: '#3AA0F0', iconColor: '#FFFFFF', titleColor: '#1D6FB8', rotate: '-0.9deg' },
-    { title: 'أريد تطوير الإنجليزية', desc: 'من الصفر حتى الاحتراف', icon: 'globe', bg: '#F0FBF4', border: '#D4F1DD', iconBg: '#34B364', iconColor: '#FFFFFF', titleColor: '#1E7A46', rotate: '1.1deg' },
-    { title: 'أريد تطوير مهاراتي المهنية', desc: 'شهادات معتمدة + مشاريع عملية', icon: 'briefcase', bg: '#FFF1F7', border: '#FBD9E8', iconBg: '#E8479A', iconColor: '#FFFFFF', titleColor: '#B02472', rotate: '-1deg' }
+    { title: 'أريد اجتياز STEP', desc: 'مسار مخصص + متابعة يومية', icon: 'target', bg: '#F7F3FF', border: '#E7DCFA', iconBg: '#8B5CF6', iconColor: '#FFFFFF', titleColor: '#5B21B6', rotate: '1deg', link: 'https://ayedacademy.co/courses/37' },
+    { title: 'أريد رفع درجة IELTS', desc: 'خطة احترافية + محاكاة اختبار', icon: 'award', bg: '#FFF4EC', border: '#FBDFC7', iconBg: '#FF8A3D', iconColor: '#FFFFFF', titleColor: '#B45309', rotate: '-1.2deg', link: 'https://ayedacademy.co/courses/74' },
+    { title: 'أريد اجتياز القدرات', desc: 'شرح مبسط + تدريبات ذكية', icon: 'lightbulb', bg: '#FFFBEA', border: '#FBEEB8', iconBg: '#F2C94C', iconColor: '#5A4300', titleColor: '#8A6A00', rotate: '0.8deg', link: 'https://ayedacademy.co/courses/39' },
+    { title: 'أريد الاستعداد للتحصيلي', desc: 'ملخصات مركزة + بنك أسئلة', icon: 'bookopen', bg: '#EFF7FF', border: '#D6EAFB', iconBg: '#3AA0F0', iconColor: '#FFFFFF', titleColor: '#1D6FB8', rotate: '-0.9deg', link: 'https://ayedacademy.co/courses/43' },
+    { title: 'أريد تطوير الإنجليزية', desc: 'من الصفر حتى الاحتراف', icon: 'globe', bg: '#F0FBF4', border: '#D4F1DD', iconBg: '#34B364', iconColor: '#FFFFFF', titleColor: '#1E7A46', rotate: '1.1deg', link: 'https://ayedacademy.co/courses/76' },
+    { title: 'أريد تطوير مهاراتي المهنية', desc: 'شهادات معتمدة + مشاريع عملية', icon: 'briefcase', bg: '#FFF1F7', border: '#FBD9E8', iconBg: '#E8479A', iconColor: '#FFFFFF', titleColor: '#B02472', rotate: '-1deg', link: 'https://ayedacademy.co/courses/45' }
   ];
+
+  /* ============================================================
+     روابط الفئات (البوب أب): غيّر قيمة link لكل فئة باللينك المناسب
+     ============================================================ */
   const CATEGORIES = [
-    { id: 'eng', label: 'الدورات الهندسية', icon: 'compass', hint: 'AutoCAD, PMP, Revit' },
-    { id: 'med', label: 'الدورات الطبية', icon: 'heartpulse', hint: 'BLS, مصطلحات، تمريض' },
-    { id: 'kids', label: 'دورات الأطفال والناشئين', icon: 'smile', hint: 'برمجة، إنجليزي، قدرات' },
-    { id: 'lang', label: 'دورات اللغة والاختبارات الدولية', icon: 'languages', hint: 'IELTS, STEP, TOEFL' },
-    { id: 'qudrat', label: 'دورات القدرات والتحصيلي', icon: 'graduationcap', hint: 'لفظي، كمي، علمي' },
-    { id: 'pro', label: 'دورات التطوير المهني', icon: 'trendingup', hint: 'إدارة، تسويق، حاسب' }
+    { id: 'eng', label: 'الدورات الهندسية', icon: 'compass', hint: 'AutoCAD, PMP, Revit', link: 'https://ayedacademy.co/courses/93' },
+    { id: 'med', label: 'الدورات الطبية', icon: 'heartpulse', hint: 'BLS, مصطلحات، تمريض', link: 'https://ayedacademy.co/courses/86' },
+    { id: 'kids', label: 'دورات الأطفال والناشئين', icon: 'smile', hint: 'برمجة، إنجليزي، قدرات', link: 'https://ayedacademy.co/courses/90' },
+    { id: 'lang', label: 'دورات اللغة والاختبارات الدولية', icon: 'languages', hint: 'IELTS, STEP, TOEFL', link: 'https://example.com/languages' },
+    { id: 'qudrat', label: 'دورات القدرات والتحصيلي', icon: 'graduationcap', hint: 'لفظي، كمي، علمي', link: 'https://example.com/qudrat-tahsili' },
+    { id: 'pro', label: 'دورات التطوير المهني', icon: 'trendingup', hint: 'إدارة، تسويق، حاسب', link: 'https://example.com/pro-dev' }
   ];
 
   const cardsGrid = document.getElementById('cardsGrid');
@@ -591,6 +599,10 @@
     card.style.background = g.bg;
     card.style.borderColor = g.border;
     card.innerHTML = '<div class="card-pin"><div class="card-pin-clip"></div><div class="card-pin-needle"></div></div><div class="card-lines"></div><div class="card-row"><div class="card-text"><h3 class="card-title" style="color:' + g.titleColor + '">' + g.title + '</h3><p class="card-desc"><span class="card-desc-dot"></span>' + g.desc + '</p></div><div class="card-icon" style="background:' + g.iconBg + ';color:' + g.iconColor + '">' + svg(g.icon) + '</div></div><div class="card-footer"><span class="card-ready">مسار جاهز ' + svg('arrowleft') + '</span><span class="card-arrow">' + svg('arrowupright') + '</span></div>';
+    // اربط كل كارت باللينك بتاعه
+    card.addEventListener('click', function () {
+      if (g.link) window.location.href = g.link;
+    });
     cardsGrid.appendChild(card);
   });
 
@@ -725,6 +737,7 @@
   // ===== CATEGORIES =====
   const catGrid = document.getElementById('catGrid');
   let selectedCategory = null;
+  let selectedCategoryLink = null;
   CATEGORIES.forEach(function (c) {
     const btn = document.createElement('button');
     btn.type = 'button';
@@ -733,6 +746,7 @@
     btn.innerHTML = '<div class="cat-icon">' + svg(c.icon) + '</div><div class="cat-text"><div class="cat-label">' + c.label + '</div><div class="cat-hint">' + c.hint + '</div></div><div class="cat-check">' + svg('check') + '</div>';
     btn.addEventListener('click', function () {
       selectedCategory = c.id;
+      selectedCategoryLink = c.link;
       document.querySelectorAll('.cat-btn').forEach(function (b) { b.classList.remove('selected'); });
       btn.classList.add('selected');
       updateContinueButton();
@@ -761,7 +775,13 @@
   closeModalBtn.addEventListener('click', closeModal);
   modalBackdrop.addEventListener('click', closeModal);
   document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && modalOverlay.classList.contains('open')) closeModal(); });
-  continueBtn.addEventListener('click', function () { if (!selectedCategory) return; closeModal(); });
+  continueBtn.addEventListener('click', function () {
+    if (!selectedCategory) return;
+    if (selectedCategoryLink) {
+      window.location.href = selectedCategoryLink;
+    }
+    closeModal();
+  });
 })();
 </script>
 </body>
